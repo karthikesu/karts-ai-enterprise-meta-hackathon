@@ -1,0 +1,181 @@
+{
+  "plan": {
+    "id": "integrated-language-with-authoritative-inventory",
+    "callLimit": 3,
+    "maxPromptTokensPerCall": 600,
+    "maxCompletionTokensPerCall": 512
+  },
+  "startedAt": "2026-11-03T03:59:11.279Z",
+  "attemptedCalls": 3,
+  "results": [
+    {
+      "id": "integrated-en-kopi-availability",
+      "language": "en",
+      "shop": {
+        "id": "kopi-maju",
+        "name": "Kopi Maju"
+      },
+      "customerText": "Kopi Maju got slot tomorrow evening?",
+      "model": "meta-models/muse-spark-open-1026",
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 346,
+        "completion_tokens": 496,
+        "total_tokens": 842,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 362,
+          "audio_tokens": 0,
+          "reasoning_tokens": 450,
+          "rejected_prediction_tokens": 576
+        }
+      },
+      "modelReply": "This is dummy data only, but according to our demo inventory Kopi Maju has a slot available tomorrow evening at 4 Nov 2026, 5:30 pm.",
+      "fakeSlots": [
+        "2026-11-04T17:30:00+08:00"
+      ],
+      "guard": {
+        "allowed": true,
+        "reason": "within-authoritative-context",
+        "finalReply": "This is dummy data only, but according to our demo inventory Kopi Maju has a slot available tomorrow evening at 4 Nov 2026, 5:30 pm."
+      },
+      "request": {
+        "model": "meta-models/muse-spark-open-1026",
+        "max_tokens": 512,
+        "truncate_prompt_tokens": 600,
+        "reasoning_effort": "low",
+        "tool_choice": "none",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are only the language component of a dummy hackathon demo. The deterministic booking engine is authoritative for availability and booking state. Use only FAKE_INVENTORY for availability. Never say a booking is recorded, confirmed, booked or reserved unless BOOKING_RECORD is present. Say this is dummy data only. Reply in the customer language in one sentence."
+          },
+          {
+            "role": "user",
+            "content": "{\"customer_message\":\"Kopi Maju got slot tomorrow evening?\",\"current_malaysia_date\":\"2026-11-03\",\"shop\":{\"id\":\"kopi-maju\",\"name\":\"Kopi Maju\",\"hours\":\"Mon-Sat 9:00-18:00\"},\"fake_inventory\":[{\"iso\":\"2026-11-04T17:30:00+08:00\",\"label\":\"4 Nov 2026, 5:30 pm\"},{\"iso\":\"2026-11-05T10:30:00+08:00\",\"label\":\"5 Nov 2026, 10:30 am\"}],\"booking_record\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "integrated-ms-am-availability",
+      "language": "ms",
+      "shop": {
+        "id": "kedai-runcit-am",
+        "name": "Kedai Runcit A&M"
+      },
+      "customerText": "Boleh tempah slot petang esok untuk Kedai Runcit A&M?",
+      "model": "meta-models/muse-spark-open-1026",
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 358,
+        "completion_tokens": 352,
+        "total_tokens": 710,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 253,
+          "audio_tokens": 0,
+          "reasoning_tokens": 292,
+          "rejected_prediction_tokens": 440
+        }
+      },
+      "modelReply": "Ini data dummy sahaja, slot tersedia untuk Kedai Runcit A&M ialah 4 Nov 2026, 7:30 pm dan 6 Nov 2026, 11:00 am dan tiada tempahan direkodkan.",
+      "fakeSlots": [
+        "2026-11-04T19:30:00+08:00"
+      ],
+      "guard": {
+        "allowed": false,
+        "reason": "unsupported-booking-claim",
+        "finalReply": "Jawapan model membuat tuntutan booking tanpa sokongan; demo menyekatnya. Saya tidak akan sahkan tanpa rekod booking engine."
+      },
+      "request": {
+        "model": "meta-models/muse-spark-open-1026",
+        "max_tokens": 512,
+        "truncate_prompt_tokens": 600,
+        "reasoning_effort": "low",
+        "tool_choice": "none",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are only the language component of a dummy hackathon demo. The deterministic booking engine is authoritative for availability and booking state. Use only FAKE_INVENTORY for availability. Never say a booking is recorded, confirmed, booked or reserved unless BOOKING_RECORD is present. Say this is dummy data only. Reply in the customer language in one sentence."
+          },
+          {
+            "role": "user",
+            "content": "{\"customer_message\":\"Boleh tempah slot petang esok untuk Kedai Runcit A&M?\",\"current_malaysia_date\":\"2026-11-03\",\"shop\":{\"id\":\"kedai-runcit-am\",\"name\":\"Kedai Runcit A&M\",\"hours\":\"Daily 8:00-20:00\"},\"fake_inventory\":[{\"iso\":\"2026-11-04T19:30:00+08:00\",\"label\":\"4 Nov 2026, 7:30 pm\"},{\"iso\":\"2026-11-06T11:00:00+08:00\",\"label\":\"6 Nov 2026, 11:00 am\"}],\"booking_record\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "integrated-ta-meena-availability",
+      "language": "ta",
+      "shop": {
+        "id": "meena-tailor",
+        "name": "Meena Tailor"
+      },
+      "customerText": "மீனா டெய்லரிடம் நாளை மாலை slot இருக்கா?",
+      "model": "meta-models/muse-spark-open-1026",
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 362,
+        "completion_tokens": 382,
+        "total_tokens": 744,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 251,
+          "audio_tokens": 0,
+          "reasoning_tokens": 282,
+          "rejected_prediction_tokens": 666
+        }
+      },
+      "modelReply": "இது டம்மி தரவு மட்டுமே, நாளை (4 நவ 2026) மாலை ஸ்லாட் இல்லை, கிடைக்கும் ஸ்லாட்கள் 5 நவ 2026, 4:00 pm மற்றும் 7 நவ 2026, 12:30 pm ஆகும்.",
+      "fakeSlots": [
+        "2026-11-05T16:00:00+08:00",
+        "2026-11-07T12:30:00+08:00"
+      ],
+      "guard": {
+        "allowed": true,
+        "reason": "within-authoritative-context",
+        "finalReply": "இது டம்மி தரவு மட்டுமே, நாளை (4 நவ 2026) மாலை ஸ்லாட் இல்லை, கிடைக்கும் ஸ்லாட்கள் 5 நவ 2026, 4:00 pm மற்றும் 7 நவ 2026, 12:30 pm ஆகும்."
+      },
+      "request": {
+        "model": "meta-models/muse-spark-open-1026",
+        "max_tokens": 512,
+        "truncate_prompt_tokens": 600,
+        "reasoning_effort": "low",
+        "tool_choice": "none",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are only the language component of a dummy hackathon demo. The deterministic booking engine is authoritative for availability and booking state. Use only FAKE_INVENTORY for availability. Never say a booking is recorded, confirmed, booked or reserved unless BOOKING_RECORD is present. Say this is dummy data only. Reply in the customer language in one sentence."
+          },
+          {
+            "role": "user",
+            "content": "{\"customer_message\":\"மீனா டெய்லரிடம் நாளை மாலை slot இருக்கா?\",\"current_malaysia_date\":\"2026-11-03\",\"shop\":{\"id\":\"meena-tailor\",\"name\":\"Meena Tailor\",\"hours\":\"Tue-Sun 10:00-19:00\"},\"fake_inventory\":[{\"iso\":\"2026-11-05T16:00:00+08:00\",\"label\":\"5 Nov 2026, 4:00 pm\"},{\"iso\":\"2026-11-07T12:30:00+08:00\",\"label\":\"7 Nov 2026, 12:30 pm\"}],\"booking_record\":null}"
+          }
+        ]
+      }
+    }
+  ],
+  "error": null,
+  "finishedAt": "2026-11-03T03:59:17.831Z",
+  "totals": {
+    "calls": 3,
+    "promptTokens": 1066,
+    "cachedPromptTokens": 256,
+    "completionTokens": 1230,
+    "reasoningTokens": 1024,
+    "guardAllowed": 2,
+    "guardBlocked": 1
+  },
+  "evidenceNote": "Recorded app-path evidence for the public hackathon package. Private identifiers and account details are omitted."
+}
