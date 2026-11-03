@@ -12,7 +12,7 @@ Built with Muse Spark Open.
 - `src/baseten-adapter.mjs` - the app integration path and recorded model evidence used for the hackathon tests; API calls are disabled in this public package.
 - `src/app.js`, `index.html`, `styles.css` - browser demo shell.
 - `demo-replay.html` - the 3-minute screen-recording page. It replays deterministic state and shows recorded model evidence; it makes no API call.
-- `demo-public.mp4` - the 3-minute recorded demo prepared for public submission.
+- Demo video - the 3-minute recorded demo is hosted unlisted on YouTube: https://youtu.be/iV6dqffmru4.
 - `demo-evidence.html` - human-readable evidence summary.
 - `integrated-batch-evidence.json` - public-safe integrated batch evidence with private identifiers and account details removed.
 - `mock-test-results.txt` - current regression output: 17/17 passing.
