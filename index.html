@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KARTS offline hackathon prototype</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Guarded prototype</p>
+      <h1>KARTS shop assistant demo</h1>
+      <p>Guarded dummy demo with deterministic booking state and recorded Muse Spark Open evidence. The on-page chat is an offline replay; it does not make API calls or claim a live booking integration.</p>
+    </section>
+    <section class="panel">
+      <div class="samples" aria-label="Sample messages">
+        <button data-sample="Kopi Maju got slot tomorrow evening?">English slot check</button>
+        <button data-sample="Boleh tempah slot petang esok untuk Kedai Runcit A&M?">Malay slot check</button>
+        <button data-sample="மீனா டெய்லர் இன்று slot இருக்கா?">Tamil slot check</button>
+        <button data-sample="I want a refund and legal complaint">Owner handoff</button>
+      </div>
+      <div id="chat-log" class="chat-log" aria-live="polite"></div>
+      <button id="book-offered" class="book-offered" type="button" hidden>Book offered dummy slot</button>
+      <form id="chat-form" class="composer">
+        <input id="message" autocomplete="off" placeholder="Try: Kopi Maju got slot tomorrow evening?">
+        <button type="submit">Send</button>
+      </form>
+      <p class="meta"><span id="turns">0</span> guarded offline turns · no API calls · 17/17 tests</p>
+    </section>
+    <section class="panel evidence-panel">
+      <h2>Recorded integrated evidence</h2>
+      <p>Three recorded app-path calls passed fake-inventory use in English, Malay and Tamil. The Malay guard overblocked a truthful negative booking statement and was refined offline; no live replay was made.</p>
+      <p>Built with Muse Spark Open. Booking persistence stays deterministic: a confirmation is valid only after the engine saves a dummy record.</p>
+    </section>
+  </main>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
