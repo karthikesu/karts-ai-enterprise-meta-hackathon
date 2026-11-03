@@ -1,0 +1,115 @@
+> karts-ai-enterprise-meta-hackathon@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: detects Tamil, Malay and English demo text
+ok 1 - detects Tamil, Malay and English demo text
+  ---
+  duration_ms: 1.556883
+  type: 'test'
+  ...
+# Subtest: checks a tomorrow-evening dummy slot and persists the demo booking before confirming
+ok 2 - checks a tomorrow-evening dummy slot and persists the demo booking before confirming
+  ---
+  duration_ms: 3.923473
+  type: 'test'
+  ...
+# Subtest: a Malay slot-booking request offers a dummy slot before any confirmation
+ok 3 - a Malay slot-booking request offers a dummy slot before any confirmation
+  ---
+  duration_ms: 1.274844
+  type: 'test'
+  ...
+# Subtest: a newly named shop overrides the previous conversation shop
+ok 4 - a newly named shop overrides the previous conversation shop
+  ---
+  duration_ms: 0.955309
+  type: 'test'
+  ...
+# Subtest: does not offer a wrong-date slot for a tomorrow-evening request
+ok 5 - does not offer a wrong-date slot for a tomorrow-evening request
+  ---
+  duration_ms: 2.088969
+  type: 'test'
+  ...
+# Subtest: booking engine owns state and rejects duplicate or unknown-slot confirmation
+ok 6 - booking engine owns state and rejects duplicate or unknown-slot confirmation
+  ---
+  duration_ms: 0.788247
+  type: 'test'
+  ...
+# Subtest: blocks the actual Malay recorded-booking output when no booking record exists
+ok 7 - blocks the actual Malay recorded-booking output when no booking record exists
+  ---
+  duration_ms: 1.811107
+  type: 'test'
+  ...
+# Subtest: replaces actual English and Tamil context refusals when fake inventory is supplied
+ok 8 - replaces actual English and Tamil context refusals when fake inventory is supplied
+  ---
+  duration_ms: 2.006557
+  type: 'test'
+  ...
+# Subtest: future full language prompt supplies fake inventory and the no-claim booking rule
+ok 9 - future full language prompt supplies fake inventory and the no-claim booking rule
+  ---
+  duration_ms: 1.019529
+  type: 'test'
+  ...
+# Subtest: integrated model batch shape carried fake inventory in every full prompt
+ok 10 - integrated model batch shape carried fake inventory in every full prompt
+  ---
+  duration_ms: 2.616105
+  type: 'test'
+  ...
+# Subtest: recorded integrated batch preserves guard evidence
+ok 11 - recorded integrated batch preserves guard evidence
+  ---
+  duration_ms: 0.279946
+  type: 'test'
+  ...
+# Subtest: booking guard distinguishes a truthful negative booking statement from an unsupported claim
+ok 12 - booking guard distinguishes a truthful negative booking statement from an unsupported claim
+  ---
+  duration_ms: 0.773176
+  type: 'test'
+  ...
+# Subtest: model booking confirmation passes only after the booking engine persists a dummy record
+ok 13 - model booking confirmation passes only after the booking engine persists a dummy record
+  ---
+  duration_ms: 0.312187
+  type: 'test'
+  ...
+# Subtest: integrated model turn wires the app prompt, inventory and guard without a live call when stubbed
+ok 14 - integrated model turn wires the app prompt, inventory and guard without a live call when stubbed
+  ---
+  duration_ms: 1.091258
+  type: 'test'
+  ...
+# Subtest: hands uncertain requests to the owner instead of guessing
+ok 15 - hands uncertain requests to the owner instead of guessing
+  ---
+  duration_ms: 0.212855
+  type: 'test'
+  ...
+# Subtest: first test request is bounded and uses no tools or private data
+ok 16 - first test request is bounded and uses no tools or private data
+  ---
+  duration_ms: 0.430227
+  type: 'test'
+  ...
+# Subtest: recorded development batch is complete and API calls stay disabled
+ok 17 - recorded development batch is complete and API calls stay disabled
+  ---
+  duration_ms: 0.364559
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 131.757133
